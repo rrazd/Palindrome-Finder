@@ -1,0 +1,16 @@
+Solution to the following Puzzle:
+_________________________________
+
+A palindromic number reads the same both ways. The largest palindrome made from
+the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
+
+
+NOTE
+____
+
+I made the program general so that one can calculate the largest palindrome for 
+1,2,3,4 digits. Upon testing for 5 digits the time for the program to run became
+unreasonable. It was clear to me when devising the algorithm (uses brute force)
+that it would be Little Omega(n)
