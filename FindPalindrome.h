@@ -22,11 +22,11 @@ class FindPalindrome {
 	
 	public:
 	
-	    //Constructor
+	        //Constructor
 		FindPalindrome(int digits_requiered);
 		
 		//Accessors
-        int Greatest_Palindrome_Found();
+                int Greatest_Palindrome_Found();
 
 		//Mutators
 		void Product_Generator();
