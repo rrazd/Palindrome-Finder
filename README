@@ -1,3 +1,10 @@
+Intro
+_____
+
+I really like solving programming puzzles because the instant gratification of seeing
+the fruits of your labor a.k.a the correct output, is amazing!
+
+
 Solution to the following Puzzle:
 _________________________________
 
@@ -13,4 +20,6 @@ ____
 I made the program general so that one can calculate the largest palindrome for 
 1,2,3,4 digits. Upon testing for 5 digits the time for the program to run became
 unreasonable. It was clear to me when devising the algorithm (uses brute force)
-that it would be Little Omega(n)
+that it would be O(n^2). This is not optimum however at the time it seemed to be 
+the most robust method for finding a palindrome for user specified number of digits
+for the operand.   
