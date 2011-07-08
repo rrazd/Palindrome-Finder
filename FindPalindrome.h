@@ -1,21 +1,9 @@
-/*
- *  FindPalindrome.h
- */
-
-//Problem:
-//A palindromic number reads the same both ways. The largest palindrome made from
-//the product of two 2-digit numbers is 9009 = 91 × 99.
-//Find the largest palindrome made from the product of two 3-digit numbers.
-
-
 #include <math.h>
 
 class FindPalindrome {
 
 	private:
 		
-		//CLASS member vars
-
 		//multiplicand 1
 		int number_one; 
 		//multiplicand 2
@@ -28,10 +16,9 @@ class FindPalindrome {
 		int palindrome; 
 		//holds greatest palindrome discovered 
 		int greatest;
-	    
-		int upper_limit;
-	    int lower_limit;
-	
+	    //as determined by number of digits for operand
+		int upper_limit; 
+		int lower_limit;
 	
 	public:
 	
@@ -44,17 +31,12 @@ class FindPalindrome {
 		//Mutators
 		void Product_Generator();
 		void Determine_if_Palindrome();  
-
 };
-
 
 
 FindPalindrome::FindPalindrome(int digits_requiered){
 	
-	
-	//both number one and number two are set to their minimum possible values
-	//for palindrome of requiered digits
-	upper_limit = pow(10, digits_requiered) - 1;
+ 	upper_limit = pow(10, digits_requiered) - 1;
 	lower_limit = pow(10, digits_requiered -1);
 	
 	number_two = number_one = upper_limit;
@@ -67,70 +49,31 @@ FindPalindrome::FindPalindrome(int digits_requiered){
 }
 
 
-
 int FindPalindrome::Greatest_Palindrome_Found(){
 
 	return greatest;
 }
 
 
-
-
 void FindPalindrome::Product_Generator(){
 	
-  
  	while (number_one >= lower_limit) {
-		
 		number_two = upper_limit;
 		while (number_two >= lower_limit) {
- 			 
 			if(number_one >= number_two)
 			{	
-				
 				//test initial numbers to see if they generate palindrome
 				Determine_if_Palindrome();
-				
  			}
-			
 			number_two = number_two - 1;			
-	 
 		}
-			
 		number_one = number_one - 1;
 	}
-	 
-	/*
-	//we have reached the 10 * 100 case if we are assuming 2 digits, which caused us to skip out 
-	//of the if block
-	
-	
-	//While loop: for (11 to 99) * (10 to 99) multiplications without repeating the multiplications already
-	//done in the if clause ie/ [11*11, 11*12.... 55*56, 55*57 .... 99*99]
-
- 	while (number_one >= upper_limit) {
-		
-		number_one = number_one + 1;
-		number_two = original_number_two;
-		
-		while (number_two <= upper_limit) {
-		
-			number_two = number_two + 1;
-			
-			if (number_two >= number_one) {
-				
-				Determine_if_Palindrome();
-			}
-		}
-	}
-	 */
 }
 
 
-
-
 void FindPalindrome:: Determine_if_Palindrome(){
-	//FUNCTION vars
-
+ 
 	//used in determining length of array and storing product into array
 	int array_length = 0;
 	//copy of array length so that original length value is still available
@@ -141,13 +84,8 @@ void FindPalindrome:: Determine_if_Palindrome(){
 	int retrieve_one = 0;
 	int retrieve_two = 0;
 
-
-
-
 	current = number_one * number_two;
 	copy = current;
-
-
 
 	//get length of number and create array to hold number
 	while (copy != 0) {
@@ -160,7 +98,6 @@ void FindPalindrome:: Determine_if_Palindrome(){
 	//restore to products value for extraction manipulations
 	copy = current;
 
-
 	array_length_cpy = array_length;
 	//extract digits from number and poopulate array
 	for (int i = array_length_cpy; i>0; --i) {
@@ -168,7 +105,6 @@ void FindPalindrome:: Determine_if_Palindrome(){
 		copy/=10;
 		--array_length_cpy;
 	}
-
 
 	//Compare last and first digits then move "inwards" comparing the digits
 	tail = array_length -1;
@@ -193,20 +129,9 @@ void FindPalindrome:: Determine_if_Palindrome(){
 		//test for if it is the biggest one found yet
 		if (current > greatest) {
 			greatest = current;
-			
-		/*	
-			//output of all palindromic products for user info
-			
-			std::cout << "    " << number_one <<"\t\t\t";
-			std::cout  << "   "<<number_two<<"\t\t\t";
-			std::cout << "  "<<current<<"\n";
-		 
-		*/
-			
 		
 		}
-	}
-	  
+	}	  
 }
 
 
