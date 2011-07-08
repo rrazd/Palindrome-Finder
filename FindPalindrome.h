@@ -30,6 +30,7 @@ class FindPalindrome {
 		int greatest;
 	    
 		int upper_limit;
+	    int lower_limit;
 	
 	
 	public:
@@ -54,8 +55,9 @@ FindPalindrome::FindPalindrome(int digits_requiered){
 	//both number one and number two are set to their minimum possible values
 	//for palindrome of requiered digits
 	upper_limit = pow(10, digits_requiered) - 1;
-	number_one = pow(10, digits_requiered -1);
-	number_two = number_one;
+	lower_limit = pow(10, digits_requiered -1);
+	
+	number_two = number_one = upper_limit;
 	
 	 current = 0;
 	 copy = 0; 	
@@ -76,22 +78,28 @@ int FindPalindrome::Greatest_Palindrome_Found(){
 
 void FindPalindrome::Product_Generator(){
 	
- 	int original_number_two = number_two;
- 		
-
-	//While loop: for 10 * (varying) multiplications ie/ [10 * 10 ... 10 * 99]
-	//this always runs but only once at the start
+  
+ 	while (number_one >= lower_limit) {
 		
-	 while (number_two <= upper_limit) {		
+		number_two = upper_limit;
+		while (number_two >= lower_limit) {
+ 			 
+			if(number_one >= number_two)
+			{	
+				
+				//test initial numbers to see if they generate palindrome
+				Determine_if_Palindrome();
+				
+ 			}
 			
-			//test initial numbers to see if they generate palindrome
-			Determine_if_Palindrome();
-			
-			number_two = number_two + 1;
- 
-		}
+			number_two = number_two - 1;			
 	 
-	
+		}
+			
+		number_one = number_one - 1;
+	}
+	 
+	/*
 	//we have reached the 10 * 100 case if we are assuming 2 digits, which caused us to skip out 
 	//of the if block
 	
@@ -99,7 +107,7 @@ void FindPalindrome::Product_Generator(){
 	//While loop: for (11 to 99) * (10 to 99) multiplications without repeating the multiplications already
 	//done in the if clause ie/ [11*11, 11*12.... 55*56, 55*57 .... 99*99]
 
- 	while (number_one <= upper_limit) {
+ 	while (number_one >= upper_limit) {
 		
 		number_one = number_one + 1;
 		number_two = original_number_two;
@@ -113,7 +121,8 @@ void FindPalindrome::Product_Generator(){
 				Determine_if_Palindrome();
 			}
 		}
-	}	
+	}
+	 */
 }
 
 
