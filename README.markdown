@@ -1,6 +1,5 @@
--= Project Information =
 
-+Project Information
+Project Information
 
 +===================
 
@@ -28,7 +27,7 @@ So, now we have CONCRETE evidence that if you can, you should always take advant
 
 
 Files
-_____
++===================
 
 C++ program: main.cpp FindPalindrome.h 
 
