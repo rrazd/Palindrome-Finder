@@ -13,7 +13,7 @@ Asymptotic run-time of both programs was analyzed. The difference was initially 
 
 I knew that c++ is supposed to be faster and more efficient so… 
 
-###Why does this happen?### 
+###Why does this happen?###
 
 Some research and more testing brought me straight to the following conclusion: the reason was because in the c++ program I had not used the built in functions for string array manipulations, necessary to determine if the product was an operand. Since both methods have to perform the same number of multiplications (in fact the Java program has to do more since I did not include the check to see if the multiplication had already been done before) this is the only other significant difference. 
 
