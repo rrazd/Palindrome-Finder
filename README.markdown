@@ -1,4 +1,3 @@
-
 ##Project Information##
 
 Out of curiosity I decided to compare 2 different approaches to the implementations of the solution. 
