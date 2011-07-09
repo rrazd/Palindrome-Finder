@@ -1,7 +1,7 @@
 ###How it all started###
-Out of curiosity I decided to compare 2 different approaches to the implementations of the solution. 
+I cam across this problem: find the largest palindrome made from the product of two n-digit numbers. Out of curiosity I decided to compare 2 different approaches to the implementations of the solution. 
 
-A much simpler less modularized version of the java solution to the problem which utilized built in functions was compared to a class structured c++ program which used no built in functions except the power function from the math library. 
+A simple java solution to the problem which utilized built in java functions was compared to a loosely object oriented c++ program which used no built in functions except the power function from the math library. 
 
 Both programs use the very similar brute force type algorithm to find the solution. 
 
