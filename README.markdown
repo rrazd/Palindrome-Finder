@@ -19,7 +19,7 @@ Some research and more testing brought me straight to the following conclusion: 
 
 The built in functions are optimum. The function I wrote for array manipulation involved loops which were likely one of the main contributors to the c++ program's deplorable run time. 
 
-So, now we have CONCRETE evidence that if you can, you should always take advantage of the built in functions!
+So, now we have CONCRETE evidence supporting the notion that you should always take advantage of the built in functions!
 
 
 ###Files###
