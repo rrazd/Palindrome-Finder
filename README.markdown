@@ -1,5 +1,5 @@
 ###How it all started###
-I cam across this problem: find the largest palindrome made from the product of two n-digit numbers. Out of curiosity I decided to compare 2 different approaches to the implementations of the solution. 
+I came across this problem: find the largest palindrome made from the product of two n-digit numbers. Out of curiosity I decided to compare 2 different approaches to the implementations of the solution. 
 
 A simple java solution to the problem which utilized built in java functions was compared to a loosely object oriented c++ program which used no built in functions except the power function from the math library. 
 
